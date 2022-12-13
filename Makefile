@@ -6,14 +6,15 @@
 #    By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 17:40:51 by mfinette          #+#    #+#              #
-#    Updated: 2022/12/12 14:17:00 by mfinette         ###   ########.fr        #
+#    Updated: 2022/12/13 14:19:23 by mfinette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 SRC =	main.c			\
 		pixel_parsing.c	\
-		ft_atoi.c		
+		ft_atoi.c		\
+		check_parameters.c
 
 OBJ = $(SRC:.c=.o)
 

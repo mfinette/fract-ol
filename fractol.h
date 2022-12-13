@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:44:14 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/12 17:32:52 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:19:49 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "mlx/mlx.h"
 # include <math.h>
-# include "colors.h"
 # include <stdio.h>
+# include <unistd.h>
 
 # define W_WIDTH 700
 # define W_HGT 700
@@ -53,6 +53,8 @@ typedef struct		s_complex
 	double		color;
 	double		max;
 	t_zoom		pos;
+	double		definition;
+	int			name;
 }					t_complex;
 
 typedef struct		s_pixel
@@ -78,5 +80,6 @@ long	iteration_nb_julia(t_complex z, t_complex *c);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int		ft_atoi(const char *str);
 float	ft_atof(char *arr);
+int		check_parameter(int argc, char **argv, t_complex *p);
 
 #endif
