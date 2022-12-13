@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 17:07:47 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/13 19:23:19 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/13 20:10:52 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	draw_fractal(t_complex *p)
 			pixel = get_coordinates(x, y, p);
 			p->max = round(p->max);
 			if (pixel.i == p->max)
-				my_mlx_pixel_put(&p->img, x, y, 0x000000);
+				my_mlx_pixel_put(&p->img, x, y, 0x151515);
 			else
 				my_mlx_pixel_put(&p->img, x, y, pixel.i * p->color * 1);
 			y += p->definition;

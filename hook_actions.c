@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 15:19:11 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/13 18:24:05 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/13 20:30:32 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	mouse_action(int keycode, int x, int y, t_complex *p)
 	}
 	if (keycode == 5)
 	{
+		p->pos.x -= 0.174 * x_pos;
+		p->pos.y -= 0.174 * y_pos;
 		p->max -= 0.5;
 		p->z.x /= 1.2;
 		p->z.y /= 1.2;

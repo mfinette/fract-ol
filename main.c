@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:40:28 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/13 19:22:24 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/13 20:03:43 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(int argc, char **argv)
 	t_data		img;
 	t_complex	parameter;
 
+	set_initial_parameters(&parameter);
 	if (!check_parameter(argc, argv, &parameter))
 		return (0);
 	parameter.crazy = -1;
@@ -49,7 +50,6 @@ int	main(int argc, char **argv)
 	parameter.img = img;
 	parameter.window.mlx = mlx;
 	parameter.window.win = mlx_win;
-	set_initial_parameters(&parameter);
 	mlx_hook(mlx_win, ON_KEYDOWN, 0, hook_action, &parameter);
 	mlx_hook(mlx_win, 17, 0, ft_close, &parameter);
 	mlx_hook(mlx_win, ON_MOUSEDOWN, 0, mouse_action, &parameter);

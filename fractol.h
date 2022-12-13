@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:44:14 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/13 19:11:59 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/13 20:33:24 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,9 @@ enum {
 	ON_DESTROY = 17
 };
 
-int		draw_fractal(t_complex *parameter);
 t_pixel	get_coordinates(double x, double y, t_complex *parameter);
 long	iteration_nb_julia(t_complex z, t_complex *c);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-int		ft_atoi(const char *str);
-float	ft_atof(char *arr);
 int		check_parameter(int argc, char **argv, t_complex *p);
 long	iteration_nb_mandelbrot(t_complex z, t_complex *c);
 long	iteration_nb_oscil(t_complex z, t_complex *c);
@@ -101,8 +98,8 @@ void	render_fractal(t_thread *t);
 int		ft_close(t_complex *p);
 
 # define MAX_THREADS 8
-# define W_WIDTH 1920
-# define W_HGT 1080
+# define W_WIDTH 1000
+# define W_HGT 1000
 # define MAX 30
 # define PAD_6 88
 # define PAD_4 86
@@ -121,8 +118,8 @@ int		ft_close(t_complex *p);
 # define K_M 8
 # define K_C 38
 # define ERROR "INVALID PARAMETERS !!!!\n\nCorrect usage is: ./fractol 'fractal_name' \
-'graphical_mode' \n\nFractals available : MANDELBROT ('m') JULIA ('j') CREEPY('c') \
-\n\nGraphical modes available : GRAPHIC ('g') PERFORMANCE ('p')\n\nenjoy the sho\
-w ;)"
+'graphical_mode' 'julia_real' 'julia_imaginary'\n\nFractals available : MANDELBROT ('m') \
+|| JULIA ('j') || CREEPY('c')\n\nGraphical modes available : GRAPHIC ('g') || PERFORMANCE \
+('p')\n\njulia parameters must be integers between 0 and 200 ;)\n"
 
 #endif
