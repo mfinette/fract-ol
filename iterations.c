@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 14:36:37 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/13 18:22:28 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/13 19:09:02 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ long	iteration_nb_julia(t_complex z, t_complex *c)
 	if (i == c->max)
 		return (c->max);
 	if (c->crazy == 1)
-		return ((int)(((double)i - log2(log2((z.r * z.r) + (z.i * z.i))) + 4.0) * 20));
+		return ((int)(((double)i - log2(log2((z.r * z.r) + (z.i * z.i))) \
+		+ 4.0) * 20));
 	else
 		return (i);
 }

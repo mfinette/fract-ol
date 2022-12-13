@@ -6,16 +6,16 @@
 #    By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 17:40:51 by mfinette          #+#    #+#              #
-#    Updated: 2022/12/13 17:24:28 by mfinette         ###   ########.fr        #
+#    Updated: 2022/12/13 19:36:20 by mfinette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
-SRC =	main.c			\
-		pixel_parsing.c	\
-		ft_atoi.c		\
-		check_parameters.c \
-		iterations.c	\
+SRC =	main.c				\
+		pixel_parsing.c		\
+		ft_atoi.c			\
+		check_parameters.c 	\
+		iterations.c		\
 		hook_actions.c
 
 OBJ = $(SRC:.c=.o)
@@ -29,10 +29,10 @@ GRAY='\033[2;37m'
 CURSIVE='\033[3m'
 
 all: $(NAME)
-		./fractol
 
 $(NAME): $(OBJ)
 	@echo $(CURSIVE)$(GRAY) "     - Compiling $(NAME)..." $(NONE)
+	@make -C ./mlx
 	@gcc $(FLAGS) $(OBJ) $(LINKS) mlx/libmlx.a -o $(NAME)
 	@echo $(GREEN)"- Compiled -"$(NONE)
 	@rm $(OBJ)
@@ -56,3 +56,5 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
+
+.PHONY: exe clean fclean re

@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:40:28 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/13 18:23:16 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/13 19:22:24 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@ int	main(int argc, char **argv)
 		return (0);
 	parameter.crazy = -1;
 	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, W_WIDTH, W_HGT, "J'ai tout pris sur github mettez moi cheat");
+	mlx_win = mlx_new_window(mlx, W_WIDTH, W_HGT, "Fractol");
 	img.img = mlx_new_image(mlx, W_WIDTH, W_HGT);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
+	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, \
+	&img.line_length, &img.endian);
 	parameter.img = img;
 	parameter.window.mlx = mlx;
 	parameter.window.win = mlx_win;
