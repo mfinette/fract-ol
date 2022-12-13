@@ -6,7 +6,7 @@
 #    By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 17:40:51 by mfinette          #+#    #+#              #
-#    Updated: 2022/12/13 20:38:40 by mfinette         ###   ########.fr        #
+#    Updated: 2022/12/13 20:53:35 by mfinette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,14 +32,13 @@ all: $(NAME)
 $(NAME): $(OBJ) ./mlx
 	@echo $(CURSIVE)$(GRAY) "     - Compiling $(NAME)..." $(NONE)
 	@make -C ./mlx
-	@gcc $(FLAGS) $(OBJ) $(LINKS) mlx/libmlx.a -o $(NAME)
+	@cc $(FLAGS) $(OBJ) $(LINKS) mlx/libmlx.a -o $(NAME)
 	@echo $(GREEN)"- Compiled -"$(NONE)
-	@rm $(OBJ)
 	@echo $(CURSIVE)$(GRAY) "     Deleted object files" $(NONE)
 
 $(OBJ): $(SRC)
 	@echo $(CURSIVE)$(GRAY) "     - Making object files..." $(NONE)
-	@gcc $(FLAGS) -c $(SRC) -Imlx
+	@cc $(FLAGS) -c $(SRC) -Imlx
 
 clean:
 	@echo $(CURSIVE)$(GRAY) "     - Removing object files..." $(NONE)

@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 15:19:11 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/13 20:30:32 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/13 20:43:39 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,9 +104,9 @@ void	modif_params(int keycode, t_complex *p)
 	if (keycode == DOWN_A)
 		p->i -= 0.05;
 	if (keycode == PAD_7)
-		p->color -= 10000;
+		p->color -= 1;
 	if (keycode == PAD_9)
-		p->color += 10000;
+		p->color += 1;
 	if (keycode == SPACE)
 		set_initial_parameters(p);
 	if (keycode == 35)
