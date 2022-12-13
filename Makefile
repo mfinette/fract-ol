@@ -6,7 +6,7 @@
 #    By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 17:40:51 by mfinette          #+#    #+#              #
-#    Updated: 2022/12/13 14:19:23 by mfinette         ###   ########.fr        #
+#    Updated: 2022/12/13 17:24:28 by mfinette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,13 @@ NAME = fractol
 SRC =	main.c			\
 		pixel_parsing.c	\
 		ft_atoi.c		\
-		check_parameters.c
+		check_parameters.c \
+		iterations.c	\
+		hook_actions.c
 
 OBJ = $(SRC:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -O3
 LINKS = -framework OpenGL -framework AppKit
 
 NONE='\033[0m'
