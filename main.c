@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:40:28 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/13 20:03:43 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/14 08:25:32 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	set_initial_parameters(t_complex *p)
 	p->i = 0;
 	p->z.x = 200;
 	p->z.y = 200;
-	p->max = 20;
+	p->max = 30;
 	p->pos.x = 0;
 	p->pos.y = 0;
 	p->render = 0;

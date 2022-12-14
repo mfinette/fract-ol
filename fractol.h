@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:44:14 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/13 20:33:24 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/14 08:20:47 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ int		ft_close(t_complex *p);
 # define K_J 46
 # define K_M 8
 # define K_C 38
-# define ERROR "INVALID PARAMETERS !!!!\n\nCorrect usage is: ./fractol 'fractal_name' \
+# define ERROR "\033[31mINVALID PARAMETERS !!!!\e[0m\n\nCorrect usage is: ./fractol 'fractl_name' \
 'graphical_mode' 'julia_real' 'julia_imaginary'\n\nFractals available : MANDELBROT ('m') \
 || JULIA ('j') || CREEPY('c')\n\nGraphical modes available : GRAPHIC ('g') || PERFORMANCE \
 ('p')\n\njulia parameters must be integers between 0 and 200 ;)\n"

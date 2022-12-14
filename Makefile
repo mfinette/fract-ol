@@ -6,7 +6,7 @@
 #    By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 17:40:51 by mfinette          #+#    #+#              #
-#    Updated: 2022/12/14 07:33:02 by mfinette         ###   ########.fr        #
+#    Updated: 2022/12/14 08:22:45 by mfinette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ SRC =	main.c				\
 		check_parameters.c 	\
 		iterations.c		\
 		hook_actions.c
+		
+HEADER = fractol.h
 
 OBJ = $(SRC:.c=.o)
 
@@ -29,7 +31,7 @@ CURSIVE='\033[3m'
 
 all: $(NAME)
 
-$(NAME): $(OBJ) ./mlx fractol.h
+$(NAME): $(OBJ) ./mlx $(HEADER)
 	@echo $(CURSIVE)$(GRAY) "     - Compiling $(NAME)..." $(NONE)
 	@make -C ./mlx
 	@cc $(FLAGS) $(OBJ) $(LINKS) mlx/libmlx.a -o $(NAME)
