@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 15:19:11 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/13 20:43:39 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/14 08:01:45 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,17 +70,17 @@ void	select_fractal(int keycode, t_complex *p)
 {
 	if (keycode == K_J)
 	{
-		p->name = 1;
+		p->name = 0;
 		set_initial_parameters(p);
 	}
-	if (keycode == K_M)
-	{
-		p->name = 2;
-		set_initial_parameters(p);
-	}	
 	if (keycode == K_C)
 	{
-		p->name = 0;
+		p->name = 1;
+		set_initial_parameters(p);
+	}	
+	if (keycode == K_M)
+	{
+		p->name = 10;
 		set_initial_parameters(p);
 	}	
 }
@@ -96,13 +96,13 @@ void	modif_params(int keycode, t_complex *p)
 	if (keycode == PAD_5)
 		p->pos.y += 20 / p->z.x;
 	if (keycode == RIGHT_A)
-		p->r += 0.05;
+		p->r += 0.01 * p->name;
 	if (keycode == LEFT_A)
-		p->r -= 0.05;
+		p->r -= 0.01 * p->name;
 	if (keycode == UP_A)
-		p->i += 0.05;
+		p->i += 0.01 * p->name;
 	if (keycode == DOWN_A)
-		p->i -= 0.05;
+		p->i -= 0.01 * p->name;
 	if (keycode == PAD_7)
 		p->color -= 1;
 	if (keycode == PAD_9)

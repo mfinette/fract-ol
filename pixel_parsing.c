@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 17:07:47 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/13 20:10:52 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/14 07:57:36 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ t_pixel	get_coordinates(double x, double y, t_complex *p)
 	z.r = p->pos.x + (x - W_WIDTH / 2) / p->z.x;
 	z.i = p->pos.y + (y - W_HGT / 2) / p->z.y;
 	pixel.c = z;
-	if (p->name == 1)
+	if (p->name == 0)
 		pixel.i = iteration_nb_mandelbrot(z, p);
-	else if (p->name == 2)
+	else if (p->name == 10)
 		pixel.i = iteration_nb_oscil(z, p);
 	else
 		pixel.i = iteration_nb_julia(z, p);

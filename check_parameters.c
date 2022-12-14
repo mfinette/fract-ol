@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:19:50 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/13 20:31:05 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/14 08:06:54 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,11 @@ int	check_parameter(int argc, char **argv, t_complex *p)
 	if (argc < 3 || argc > 5 || argc == 4)
 		return (ft_putstr(ERROR), 0);
 	if (argv[1][0] == 'j' && !argv[1][1])
-		p->name = 0;
-	else if (argv[1][0] == 'm' && !argv[1][1])
 		p->name = 1;
+	else if (argv[1][0] == 'm' && !argv[1][1])
+		p->name = 0;
 	else if (argv[1][0] == 'c' && !argv[1][1])
-		p->name = 2;
+		p->name = 10;
 	else
 		return (ft_putstr(ERROR), 0);
 	if (argv[2][0] == 'g' && !argv[2][1])

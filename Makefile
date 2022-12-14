@@ -6,7 +6,7 @@
 #    By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 17:40:51 by mfinette          #+#    #+#              #
-#    Updated: 2022/12/13 20:53:35 by mfinette         ###   ########.fr        #
+#    Updated: 2022/12/14 07:33:02 by mfinette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,12 +29,11 @@ CURSIVE='\033[3m'
 
 all: $(NAME)
 
-$(NAME): $(OBJ) ./mlx
+$(NAME): $(OBJ) ./mlx fractol.h
 	@echo $(CURSIVE)$(GRAY) "     - Compiling $(NAME)..." $(NONE)
 	@make -C ./mlx
 	@cc $(FLAGS) $(OBJ) $(LINKS) mlx/libmlx.a -o $(NAME)
 	@echo $(GREEN)"- Compiled -"$(NONE)
-	@echo $(CURSIVE)$(GRAY) "     Deleted object files" $(NONE)
 
 $(OBJ): $(SRC)
 	@echo $(CURSIVE)$(GRAY) "     - Making object files..." $(NONE)
