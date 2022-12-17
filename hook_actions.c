@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 15:19:11 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/14 08:01:45 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/17 13:38:58 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,28 @@
 
 int	mouse_action(int keycode, int x, int y, t_complex *p)
 {
-	double	x_pos;
-	double	y_pos;
+	double	mouse_x_pos;
+	double	mouse_y_pos;
 
-	x_pos = (x - W_WIDTH / 2) / p->z.x;
-	y_pos = (y - W_HGT / 2) / p->z.y;
+	mouse_x_pos = (x - W_WIDTH / 2) / p->z.x;
+	mouse_y_pos = (y - W_HGT / 2) / p->z.y;
 	if (keycode == 4)
 	{
-		p->pos.x += 0.174 * x_pos;
-		p->pos.y += 0.174 * y_pos;
+		p->pos.x += 0.174 * mouse_x_pos;
+		p->pos.y += 0.174 * mouse_y_pos;
 		p->z.x *= 1.2;
 		p->z.y *= 1.2;
 		p->max += 0.5;
 	}
+	if (keycode == 2)
+	{
+		while (p->z.x > 200)
+			mouse_action(5, x, y, p);
+	}
 	if (keycode == 5)
 	{
-		p->pos.x -= 0.174 * x_pos;
-		p->pos.y -= 0.174 * y_pos;
+		p->pos.x -= 0.174 * mouse_x_pos;
+		p->pos.y -= 0.174 * mouse_y_pos;
 		p->max -= 0.5;
 		p->z.x /= 1.2;
 		p->z.y /= 1.2;

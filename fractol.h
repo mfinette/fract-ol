@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:44:14 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/14 08:20:47 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/17 13:36:04 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <pthread.h>
 # include <stdlib.h>
+# include <stdio.h>
 // include <papier.h>
 
 typedef struct s_data

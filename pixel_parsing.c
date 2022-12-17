@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 17:07:47 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/14 07:57:36 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/17 15:45:09 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	draw_fractal(t_complex *p)
 			if (pixel.i == p->max)
 				my_mlx_pixel_put(&p->img, x, y, 0x151515);
 			else
-				my_mlx_pixel_put(&p->img, x, y, pixel.i * p->color * 1);
+				my_mlx_pixel_put(&p->img, x, y, 0xFFFFFF);
 			y += p->definition;
 		}
 		y = 0;
@@ -68,21 +68,30 @@ void	render_fractal(t_thread *t)
 	double	x;
 	double	y;
 	t_pixel	pixel;
+	int	color;
+	double	n_color;
 
-	x = W_WIDTH / (MAX_THREADS) * t->id - 1;
+	x = W_WIDTH / (MAX_THREADS) * t->id;
 	y = 0;
-	while (++x < W_WIDTH / (MAX_THREADS) * (t->id + 1))
+	while (x < W_WIDTH / (MAX_THREADS) * (t->id + 1))
 	{
 		while (y < W_HGT)
 		{
 			pixel = get_coordinates(x, y, t->c);
 			t->c->max = round(t->c->max);
 			if (pixel.i == t->c->max)
-				my_mlx_pixel_put(&t->c->img, x, y, 0x000000);
+				my_mlx_pixel_put(&t->c->img, x, y, 0x151515);
 			else
-				my_mlx_pixel_put(&t->c->img, x, y, pixel.i * t->c->color * 1);
+			{
+				color = pixel.i * 256 / t->c->max;
+				n_color = 0;
+				n_color = t->c->color + ((color / 8) << 24 | (color) << 16 | (color / 2) << 8 | 0);
+				// my_mlx_pixel_put(&t->c->img, x, y, pixel.i * t->c->color * 1);
+				my_mlx_pixel_put(&t->c->img, x, y, n_color);
+			}
 			y += t->c->definition;
 		}
+		x+= t->c->definition;
 		y = 0;
 	}
 }
